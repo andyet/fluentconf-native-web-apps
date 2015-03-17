@@ -1,6 +1,6 @@
-import React from 'react';
-import app from 'ampersand-app';
-import localLinks from 'local-links';
+import React from 'react'
+import app from 'ampersand-app'
+import localLinks from 'local-links'
 
 
 export default React.createClass({
@@ -14,13 +14,13 @@ export default React.createClass({
         </nav>
         {this.props.children}
       </div>
-    );
+    )
   },
   onClick(event) {
-    var pathname = localLinks.getLocalPathname(event);
+    var pathname = localLinks.getLocalPathname(event)
     if (pathname) {
-      event.preventDefault();
-      app.router.history.navigate(pathname, { trigger: true });
+      event.preventDefault()
+      app.router.history.navigate(pathname, { trigger: true })
     }
   }
-});
+})
