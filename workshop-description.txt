@@ -1,4 +1,6 @@
-As it turns out, building clean, maintainable JS applications is hard, especially as a team.
+Native Web Apps, (a.k.a single page apps, or clientside apps, "read more":http://blog.andyet.com/2015/01/22/native-web-apps) are becoming incredibly popular.
+
+But, as it turns out, building them in a clean, maintainable way is hard, especially as a team.
 
 With more and more logic moving into browser land, we need to be more rigorous about structure in order to avoid creating an ugly code soup heavily flavored with technical debt. There are so many options, so many toolkits, so many abstractions!
 
