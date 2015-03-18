@@ -7,4 +7,4 @@ export default React.createClass({
       <h2>Howls</h2>
     )
   }
-});
+})

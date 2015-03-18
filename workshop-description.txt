@@ -1,0 +1,60 @@
+As it turns out, building clean, maintainable JS applications is hard, especially as a team.
+
+With more and more logic moving into browser land, we need to be more rigorous about structure in order to avoid creating an ugly code soup heavily flavored with technical debt. There are so many options, so many toolkits, so many abstractions!
+
+Henrik and Luke will lead the class in building a modern, well-structured application from scratch by combining  best-of breed approaches and a carefully curated set of tools including:
+
+* "Ampersand.js":http://ampersandjs.com/: A highly modular set of libraries for building Advanced JavaScript apps.
+* "React":http://reactjs.com/: Facebook’s revolutionary view library.
+* "WebPack":http://webpack.github.io/: Module bundler and development server.
+* "ES6":http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts: The next generation of the JavaScript language.
+* "Node.js":http://nodejs.org/: The JavaScript platform built on Chrome’s runtime.
+
+By coding along with us for this two day workshop you’ll learn:
+
+* How to build an advanced single page application from scratch
+* How to use React to dramatically simplify working with and updating the DOM
+* How to use Ampersand Models/Collections to fetch and manage application state
+* How to use WebPack and the React Hot-loader to speed up development
+* The basics of how to do Isomorphic (server-rendered) clientside applications
+* How you can start using ES6 (the next generation of JavaScript) in your production applications today
+* How to write ES6 and CommonJS modules
+* How npm can give you super powers in front-end code
+* One approach to isomorphic routing
+* How to compose pages, views and subviews
+* How to handle realtime updates
+
+The workshop is being put on by "&yet":http://andyet.com/, a Node.js and single page app consultancy. &yet has been building ambitious clientside applications professionally since before Backbone.js came onto the scene.
+
+This two-day workshop will attempt to de-mystify clientside applications for you by not just blindly giving you tools, but by understanding the problems frameworks aim to solve and introduce tools to solve them.
+
+The class uses a very Node.js-inspired approach to front-end development. You'll be using modules installed with npm and composed for the browser with webpack.
+
+Henrik will teach &yet's MVC approaches by installing and using modules from Ampersand.js which evolved out of Backbone.js. But ultimately, the entire purpose of the individual module approach is to retain flexibility to make decisions that match your team's goals and preferences.
+
+This is a rough outline of how the two days typically breaks down, but note that this will be adjusted as we go to make sure everyone can follow along.
+
+* Understanding modules, npm, and webpack
+* Rundown of top frameworks, what they offer and how they compare
+* Setting up our project and the webpack dev server
+* Creating and configuring a clientside router
+* Rendering "pages" in main view based on router
+* Modeling and fetching data from an external API
+* Authenticating with external OAuth API (modeled after Instagram's auth
+* Posting updates to the API
+* Getting and applying real-time updates from the API server
+* Publishing your first module to npm
+* Testing your code
+* Team dynamics when building as a team
+
+*Audience*
+
+JS developers interested in better maintainability of front-end code when building single page applications.
+
+*Prerequisites*
+
+Attendees should:
+
+* Be comfortable working with JavaScript
+* Have experience interacting with things like AJAX and DOM
+* Any experience with Node.js on a very basic level is a plus
