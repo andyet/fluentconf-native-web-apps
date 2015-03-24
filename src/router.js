@@ -5,9 +5,8 @@ import Layout from './layout'
 import HomePage from './pages/home'
 import HowlsPage from './pages/howls'
 
-
 export default Router.extend({
-  renderPage(Page, opts = {}) {
+  renderPage (Page, opts = {}) {
     var main = (
       <Layout app={app}>
         <Page app={app} {...opts}/>
@@ -20,10 +19,10 @@ export default Router.extend({
     '': 'home',
     'howls': 'howls'
   },
-  home() {
+  home () {
     this.renderPage(HomePage)
   },
-  howls() {
+  howls () {
     this.renderPage(HowlsPage)
   }
 })

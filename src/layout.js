@@ -2,9 +2,9 @@ import React from 'react'
 import app from 'ampersand-app'
 import localLinks from 'local-links'
 
-
 export default React.createClass({
-  render() {
+  displayName: 'Layout',
+  render () {
     return (
       <div onClick={this.onClick}>
         <h1>Hi</h1>
@@ -16,7 +16,7 @@ export default React.createClass({
       </div>
     )
   },
-  onClick(event) {
+  onClick (event) {
     var pathname = localLinks.getLocalPathname(event)
     if (pathname) {
       event.preventDefault()
