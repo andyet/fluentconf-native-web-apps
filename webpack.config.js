@@ -1,40 +1,15 @@
-var webpack = require('webpack');
+var getConfig = require('hjs-webpack')
+var env = process.env.NODE_ENV || 'development'
 
 
-module.exports = {
-    devtool: 'eval',
-    entry: [
-        'webpack-dev-server/client?http://0.0.0.0:3000',
-        'webpack/hot/only-dev-server',
-        './src/app.js'
-    ],
-    output: {
-        path: __dirname + '/public/',
-        filename: 'app.js',
-        publicPath: '/public/'
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-    ],
-    resolve: {
-        extensions: [
-            '',
-            '.js',
-            '.json',
-            '.styl'
-        ]
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loaders: [
-                    'react-hot',
-                    'babel-loader'
-                ]
-            }
-        ]
-    },
-    modules: 'common'
-};
+module.exports = getConfig({
+  isDev: env === 'development',
+  in: 'src/app.js',
+  out: 'public',
+  html: function (data) {
+    var output = '<!doctype><script src="/' + data.main + '"></script>';
+    return {
+      '200.html': output
+    }
+  }
+})

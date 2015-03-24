@@ -1,10 +1,13 @@
 {
-  "name": "fluentconf-native-web-apps",
+  "name": "fluentconf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack",
+    "start": "hjs-dev-server",
+    "deploy": "npm run build && surge -p public -d innocent-steam.surge.sh"
   },
   "author": "Henrik Joreteg <henrik@andyet.net>",
   "license": "MIT",
@@ -17,8 +20,10 @@
     "ampersand-app": "^1.0.1",
     "ampersand-router": "^1.0.7",
     "domready": "^1.0.7",
+    "hjs-webpack": "^0.1.3",
     "local-links": "^1.3.0",
     "react": "^0.12.2",
-    "react-hot-loader": "^1.1.5"
+    "react-hot-loader": "^1.1.5",
+    "surge": "^0.8.1"
   }
 }
