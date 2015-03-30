@@ -1,8 +1,10 @@
 import Model from 'ampersand-model'
 import ms from 'milliseconds'
 import cacheMixin from 'ampersand-local-cache-mixin'
+import githubMixin from '../helpers/github-mixin'
+import RepoCollection from './repo-collection'
 
-export default Model.extend(cacheMixin, {
+export default Model.extend(cacheMixin, githubMixin, {
   url: 'https://api.github.com/user',
   initialize () {
     this.initStorage({
@@ -27,19 +29,15 @@ export default Model.extend(cacheMixin, {
       }
     }
   },
+  collections: {
+    repos: RepoCollection
+  },
   onLoginChange () {
     if (this.loggedIn) {
       this.fetch()
     } else {
       // wipe local data
       localStorage.clear()
-    }
-  },
-  ajaxConfig () {
-    return {
-      headers: {
-        'Authorization': 'token ' + app.me.token
-      }
     }
   }
 })

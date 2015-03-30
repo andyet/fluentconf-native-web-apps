@@ -41,7 +41,9 @@ export default React.createClass({
             <p>Don&apos;t even try to label me, yo. Or do and see if I care. Whatevs.&trade;</p>
           </header>
           <div>
-            <a href="/login" className="button button-large">Login with GitHub</a>
+            <a href="/login" className="button button-large">
+              <span className="mega-octicon octicon-mark-github"></span> Login with GitHub
+            </a>
           </div>
         </div>
       )

@@ -3,6 +3,7 @@ import domready from 'domready'
 import Router from './router'
 import Me from './models/me'
 import styles from './styles/main.styl'
+import octicons from 'octicons/octicons/octicons.css'
 
 window.app = app.extend({
   init () {
