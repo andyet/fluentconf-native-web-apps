@@ -1,14 +1,16 @@
-var webpackSettings = require('hjs-webpack')
+var webpackConfig = require('hjs-webpack')
 var env = process.env.NODE_ENV || 'development'
 
-module.exports = webpackSettings({
-  isDev: env === 'development',
+module.exports = webpackConfig({
   in: 'src/app.js',
   out: 'public',
+  isDev: env !== 'production',
+  replace: {
+    config: 'src/config/' + env + '.js'
+  },
   html: function (data) {
-    var output = '<!doctype><script src="/' + data.main + '"></script>'
     return {
-      '200.html': output
+      '200.html': data.defaultTemplate()
     }
   }
 })

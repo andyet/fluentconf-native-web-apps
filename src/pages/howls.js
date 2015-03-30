@@ -4,7 +4,7 @@ export default React.createClass({
   displayName: 'HowlsPage',
   render () {
     return (
-      <h2>Howls</h2>
+      <h2>Howling like a person</h2>
     )
   }
 })
