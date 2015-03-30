@@ -19,6 +19,9 @@
   },
   "dependencies": {
     "ampersand-app": "^1.0.1",
+    "ampersand-local-cache-mixin": "^1.1.0",
+    "ampersand-model": "^5.0.1",
+    "ampersand-react-mixin": "^0.1.1",
     "ampersand-router": "^1.0.7",
     "ampersand-state": "^4.4.5",
     "autoprefixer-stylus": "^0.5.0",
@@ -31,6 +34,8 @@
     "lodash.merge": "^3.1.0",
     "lodash.pick": "^3.1.0",
     "lodash.result": "^3.0.0",
+    "milliseconds": "^1.0.3",
+    "qs": "^2.4.1",
     "react": "^0.12.2",
     "react-hot-loader": "^1.1.5",
     "standard": "^3.2.1",
@@ -38,6 +43,7 @@
     "stylus-loader": "^1.0.0",
     "surge": "^0.8.1",
     "url-loader": "^0.5.5",
+    "xhr": "^2.0.1",
     "yeticss": "^6.0.1"
   },
   "standard": {

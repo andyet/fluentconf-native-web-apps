@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default React.createClass({
-  displayName: 'HowlsPage',
+  displayName: 'Repos',
   render () {
     return (
       <h2>Howling like a person</h2>

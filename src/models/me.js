@@ -1,12 +1,23 @@
-import State from 'ampersand-state'
+import Model from 'ampersand-model'
+import ms from 'milliseconds'
+import cacheMixin from 'ampersand-local-cache-mixin'
 
-export default State.extend({
+export default Model.extend(cacheMixin, {
+  url: 'https://api.github.com/user',
   initialize () {
-    this.fetchIfOld()
-    this.on('change', this.store, this)
+    this.initStorage({
+      storageKey: 'me',
+      ttl: ms.days(30),
+      tts: ms.minutes(10)
+    })
+    this.on('stale', this.fetch)
+    this.on('change', this.writeToStorage, this)
+    this.on('change:login', this.onLoginChange, this)
   },
   props: {
-    token: 'string'
+    token: 'string',
+    login: 'string',
+    'avatar_url': 'string'
   },
   derived: {
     loggedIn: {
@@ -16,32 +27,19 @@ export default State.extend({
       }
     }
   },
-  storage: {
-    key: 'me',
-    ttl: 60000
-  },
-  store () {
-    window.localStorage[this.storage.key] = JSON.stringify({
-      time: Date.now(),
-      data: this.toJSON()
-    })
-  },
-  restore () {
-    try {
-      const parsed = JSON.parse(window.localStorage[this.storage.key])
-      if (Date.now() - parsed.time > this.storage.ttl) {
-        throw new Error('cache expired')
-      }
-      this.set(parsed.data)
-      return true
-    } catch (e) {
-      delete localStorage[this.storage.key]
-      return false
+  onLoginChange () {
+    if (this.loggedIn) {
+      this.fetch()
+    } else {
+      // wipe local data
+      localStorage.clear()
     }
   },
-  fetchIfOld () {
-    if (!this.restore()) {
-      console.log('would fetch')
+  ajaxConfig () {
+    return {
+      headers: {
+        'Authorization': 'token ' + app.me.token
+      }
     }
   }
 })
