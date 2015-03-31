@@ -6,9 +6,6 @@ export default React.createClass({
   displayName: 'RepoDetailPage',
   render() {
     const {repo} = this.props
-    const style = {
-      backgroundColor: repo.color
-    }
     let list
     if (repo.fetchedLabels) {
       if (repo.labels.length) {
