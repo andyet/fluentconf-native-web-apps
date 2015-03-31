@@ -1,10 +1,26 @@
 import React from 'react'
+import ampersandMixin from 'ampersand-react-mixin'
+import RepoItem from '../views/repo-item'
 
 export default React.createClass({
-  displayName: 'HomePage',
+  mixins: [ampersandMixin],
+  displayName: 'Repos',
+  componentWillMount () {
+    this.props.repos.fetch()
+  },
   render () {
+    const {repos} = this.props
+
     return (
-      <h1>Welcome to the home page</h1>
+      <div>
+        <h2>Repositories</h2>
+        <div>
+          {repos.map((repo) => {
+            const attrs = repo.getAttributes({derived: true, props: true})
+            return (<RepoItem key={repo.id} {...attrs}/>)
+          })}
+        </div>
+      </div>
     )
   }
 })

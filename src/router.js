@@ -5,7 +5,7 @@ import React from 'react'
 import xhr from 'xhr'
 import Layout from './layout'
 import HomePage from './pages/home'
-import ReposPage from './pages/repos'
+import RepoDetailPage from './pages/repo-detail'
 
 export default Router.extend({
   renderPage (Page, opts = {}) {
@@ -19,16 +19,17 @@ export default Router.extend({
   },
   routes: {
     '': 'home',
-    'repos': 'repos',
     'login': 'login',
     'logout': 'logout',
-    'auth/callback': 'authCallback'
+    'auth/callback': 'authCallback',
+    'repo/:owner/:reponame': 'repoDetail'
   },
   home () {
-    this.renderPage(HomePage)
+    this.renderPage(HomePage, {repos: app.me.repos})
   },
-  repos () {
-    this.renderPage(ReposPage, {repos: app.me.repos})
+  repoDetail (owner, repoName) {
+    const model = app.me.repos.getModelByName(owner + '/' + repoName)
+    this.renderPage(RepoDetailPage, {repo: model})
   },
   login () {
     window.location = 'https://github.com/login/oauth/authorize?' + qs.stringify({

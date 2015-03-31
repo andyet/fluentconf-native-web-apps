@@ -4,5 +4,14 @@ import githubMixin from '../helpers/github-mixin'
 
 export default Collection.extend(githubMixin, {
   url: 'https://api.github.com/user/repos',
-  model: RepoModel
+  model: RepoModel,
+  getModelByName (name) {
+    let model = this.findWhere({full_name: name})
+    if (model) {
+      return model
+    }
+    model = new RepoModel({full_name: name})
+    model.fetch()
+    return model
+  }
 })

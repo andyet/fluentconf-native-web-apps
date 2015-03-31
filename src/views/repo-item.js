@@ -2,10 +2,10 @@ import React from 'react'
 
 export default React.createClass({
   render () {
-    const {full_name, url} = this.props
+    const {full_name, app_url} = this.props
     return (
       <div>
-        <span className="octicon octicon-repo"></span> <a href={url}>{full_name}</a>
+        <span className="octicon octicon-repo"></span> <a href={app_url}>{full_name}</a>
       </div>
     )
   }

@@ -1,17 +1,36 @@
 import Model from 'ampersand-model'
+import Labels from './label-collection'
 
 export default Model.extend({
+  initialize() {
+    this.listenTo(this.labels, 'sync', () => {
+      this.fetched = true
+    })
+  },
+  url() {
+    return 'https://api.github.com/repos/' + this.full_name
+  },
   props: {
     id: 'number',
-    'full_name': 'string',
-    'name': 'string'
+    full_name: 'string',
+    name: 'string'
+  },
+  session: {
+    fetched: {
+      type: 'boolean',
+      default: false
+    }
   },
   derived: {
-    appUrl: {
-      deps: ['full_name'],
-      fn () {
-        return this.full_name.toLowerCase()
-      }
+    app_url () {
+      return '/repo/' + this.full_name
     }
+  },
+  collections: {
+    labels: Labels
+  },
+  fetch () {
+    Model.prototype.fetch.apply(this, arguments)
+    this.labels.fetch()
   }
 })
