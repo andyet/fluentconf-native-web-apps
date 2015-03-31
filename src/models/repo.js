@@ -4,7 +4,7 @@ import Labels from './label-collection'
 export default Model.extend({
   initialize() {
     this.listenTo(this.labels, 'sync', () => {
-      this.fetched = true
+      this.fetchedLabels = true
     })
   },
   url() {
@@ -16,7 +16,7 @@ export default Model.extend({
     name: 'string'
   },
   session: {
-    fetched: {
+    fetchedLabels: {
       type: 'boolean',
       default: false
     }

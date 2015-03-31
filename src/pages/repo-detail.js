@@ -9,13 +9,28 @@ export default React.createClass({
     const style = {
       backgroundColor: repo.color
     }
+    let list
+    if (repo.fetchedLabels) {
+      if (repo.labels.length) {
+        list = repo.labels.map((label) => {
+          return (
+            <div key={label.name} style={{backgroundColor: label.color}}>{label.name}</div>
+          )
+        })
+      } else {
+        list = (
+          <p>No Labels</p>
+        )
+      }
+    } else {
+      list = (<p>Fetching Label...</p>)
+    }
     return (
       <div>
         <h3>{repo.full_name}</h3>
+        <h4>Labels</h4>
         <div>
-          {repo.labels.map((label) => {
-            return (<div style={{backgroundColor: label.color}}>{label.name}</div>)
-          })}
+          {list}
         </div>
       </div>
     )
