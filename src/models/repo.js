@@ -5,5 +5,13 @@ export default Model.extend({
     id: 'number',
     'full_name': 'string',
     'name': 'string'
+  },
+  derived: {
+    appUrl: {
+      deps: ['full_name'],
+      fn () {
+        return this.full_name.toLowerCase()
+      }
+    }
   }
 })

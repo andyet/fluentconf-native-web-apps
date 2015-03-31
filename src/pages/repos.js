@@ -1,5 +1,6 @@
 import React from 'react'
 import ampersandMixin from 'ampersand-react-mixin'
+import RepoItem from '../views/repo-item'
 
 export default React.createClass({
   mixins: [ampersandMixin],
@@ -15,7 +16,7 @@ export default React.createClass({
         <h2>Repositories</h2>
         <div>
           {repos.map((repo) => {
-            return (<div><span className="mega-octicon octicon-repo"></span> {repo.full_name}</div>)
+            return (<RepoItem key={repo.id} {...repo.toJSON()}/>)
           })}
         </div>
       </div>
