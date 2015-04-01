@@ -7,13 +7,14 @@ export default React.createClass({
   displayName: 'RepoDetailPage',
   render() {
     const {repo} = this.props
+
     let list
+
+    // if we've fetched 'em
     if (repo.fetchedLabels) {
       if (repo.labels.length) {
         list = repo.labels.map((label) => {
-          return (
-            <Label key={label.name} {...label.toJSON()}/>
-          )
+          return <Label key={label.name} {...label.toJSON()}/>
         })
       } else {
         list = (
@@ -21,7 +22,7 @@ export default React.createClass({
         )
       }
     } else {
-      list = (<p>Fetching Label...</p>)
+      list = <p>Fetching Labels...</p>
     }
     return (
       <div>

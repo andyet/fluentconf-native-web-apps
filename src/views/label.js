@@ -5,9 +5,11 @@ export default React.createClass({
   render() {
     const {color, name} = this.props
     return (
-      <div>
-        <button style={{backgroundColor: color}} className='button'>{name}</button>
-        <button style={{backgroundColor: color}} className='button'>delete</button>
+      <div className='label'>
+        <span className='label-color' style={{backgroundColor: color}}>&nbsp;</span>
+        <input value={name}/>
+        <span className='octicon octicon-pencil'></span>
+        <span className='octicon octicon-x'></span>
       </div>
     )
   }
