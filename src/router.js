@@ -7,6 +7,8 @@ import config from 'config'
 import Layout from './layout'
 import HomePage from './pages/home'
 import RepoDetailPage from './pages/repo-detail'
+import ErrorPage from './pages/error'
+import PublicPage from './pages/public'
 
 export default Router.extend({
   renderPage (Page, opts = {}) {
@@ -20,12 +22,17 @@ export default Router.extend({
   },
   routes: {
     '': 'home',
+    'repos': 'repos',
     'login': 'login',
     'logout': 'logout',
     'auth/callback': 'authCallback',
-    'repo/:owner/:reponame': 'repoDetail'
+    'repo/:owner/:reponame': 'repoDetail',
+    '*404': 'fourOhFour'
   },
   home () {
+    React.render(<PublicPage/>, document.body)
+  },
+  repos () {
     this.renderPage(HomePage, {repos: app.me.repos})
   },
   repoDetail (owner, repoName) {
@@ -51,7 +58,10 @@ export default Router.extend({
       } else {
         app.me.token = data.token
       }
-      this.redirectTo('/')
+      this.redirectTo('/repos')
     })
+  },
+  fourOhFour () {
+    this.renderPage(ErrorPage, {title: '404', message: 'Nothing to see here, sorry.'})
   }
 })
