@@ -1,13 +1,15 @@
 import React from 'react'
+import ampersandMixin from 'ampersand-react-mixin'
+import assign from 'lodash.assign'
 
 export default React.createClass({
+  mixins: [ampersandMixin],
   displayName: 'Label',
   getInitialState () {
     const {name, color} = this.props.label
     return {
       name: name,
-      color: color,
-      editing: false
+      color: color
     }
   },
   propTypes: {
@@ -28,19 +30,23 @@ export default React.createClass({
     event.preventDefault()
   },
   onToggleEditClick (event) {
-    this.setState({editing: !this.state.editing})
+    const {label} = this.props
+    label.editing = !label.editing
   },
   onSubmit (e) {
     e.preventDefault()
-    this.props.label.update(this.state)
-    this.setState({editing: false})
+    const {label} = this.props
+    if (label.saved) {
+      label.update(this.state)
+    } else {
+      label.save(assign({editing: false}, this.state))
+    }
   },
   render () {
     const {color, name} = this.state
-
     const cssColor = '#' + color
 
-    if (this.state.editing) {
+    if (this.props.label.editing) {
       return (
         <form onSubmit={this.onSubmit} className='label'>
           <span className='label-color' style={{backgroundColor: cssColor}}>&nbsp;</span>

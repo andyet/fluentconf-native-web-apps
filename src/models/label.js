@@ -6,13 +6,23 @@ export default Model.extend(githubMixin, {
   idAttribute: 'name',
   props: {
     name: 'string',
-    color: 'f29513'
+    color: {
+      type: 'string',
+      default: '000000'
+    }
   },
   session: {
     saved: {
       type: 'boolean',
       default: true
+    },
+    editing: {
+      type: 'boolean',
+      default: false
     }
+  },
+  isNew () {
+    return this.saved
   },
   update (attrs) {
     const old = this.toJSON()
@@ -24,6 +34,8 @@ export default Model.extend(githubMixin, {
       if (err) {
         this.set(old)
         console.error('Failed to update label, check yo wifi, yo')
+      } else {
+        this.saved = true
       }
     })
     this.set(attrs)

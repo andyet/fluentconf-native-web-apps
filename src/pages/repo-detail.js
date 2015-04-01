@@ -8,6 +8,12 @@ export default React.createClass({
   propTypes: {
     repo: React.PropTypes.object.isRequired
   },
+  onAddClick () {
+    this.props.repo.labels.add({
+      saved: false,
+      editing: true
+    }, {at: 0})
+  },
   render () {
     const {repo} = this.props
 
@@ -29,8 +35,10 @@ export default React.createClass({
     }
     return (
       <div>
-        <h3>{repo.full_name}</h3>
-        <h4>Labels</h4>
+        <h3>{repo.full_name} Labels</h3>
+        <p>
+          <button className="button" onClick={this.onAddClick}><span className="octicon octicon-plus"></span> Add New</button>
+        </p>
         <ul>
           {list}
         </ul>
