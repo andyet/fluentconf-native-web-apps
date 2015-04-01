@@ -5,7 +5,10 @@ import Label from '../views/label'
 export default React.createClass({
   mixins: [ampersandMixin],
   displayName: 'RepoDetailPage',
-  render() {
+  propTypes: {
+    repo: React.PropTypes.object.isRequired
+  },
+  render () {
     const {repo} = this.props
 
     let list
@@ -14,7 +17,7 @@ export default React.createClass({
     if (repo.fetchedLabels) {
       if (repo.labels.length) {
         list = repo.labels.map((label) => {
-          return <Label key={label.name} {...label.toJSON()}/>
+          return <Label key={label.name} label={label}/>
         })
       } else {
         list = (

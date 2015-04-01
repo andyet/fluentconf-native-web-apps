@@ -37,7 +37,7 @@ export default Model.extend(cacheMixin, githubMixin, {
       this.fetch()
     } else {
       // wipe local data
-      localStorage.clear()
+      window.localStorage.clear()
     }
   }
 })

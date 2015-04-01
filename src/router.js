@@ -29,8 +29,8 @@ export default Router.extend({
     this.renderPage(HomePage, {repos: app.me.repos})
   },
   repoDetail (owner, repoName) {
-    const model = app.me.repos.getModelByName(owner + '/' + repoName)
-    this.renderPage(RepoDetailPage, {repo: model})
+    const repo = app.me.repos.getModelByName(owner + '/' + repoName)
+    this.renderPage(RepoDetailPage, {repo: repo, labels: repo.labels})
   },
   login () {
     window.location = config.githubAuthUrl
@@ -40,13 +40,17 @@ export default Router.extend({
     this.redirectTo('/')
   },
   authCallback () {
-    const code = qs.parse(location.search.slice(1)).code
+    const code = qs.parse(window.location.search.slice(1)).code
 
     xhr({
       url: config.tokenUrl + '/' + code,
       json: true
     }, (err, resp, data) => {
-      app.me.token = data.token
+      if (err) {
+        console.error('could not get token', err, data)
+      } else {
+        app.me.token = data.token
+      }
       this.redirectTo('/')
     })
   }

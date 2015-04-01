@@ -2,12 +2,12 @@ import Model from 'ampersand-model'
 import Labels from './label-collection'
 
 export default Model.extend({
-  initialize() {
+  initialize () {
     this.listenTo(this.labels, 'sync', () => {
       this.fetchedLabels = true
     })
   },
-  url() {
+  url () {
     return 'https://api.github.com/repos/' + this.full_name
   },
   props: {
