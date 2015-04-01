@@ -6,7 +6,7 @@ module.exports = webpackConfig({
   out: 'public',
   isDev: env !== 'production',
   replace: {
-    config: 'src/config/' + env + '.js'
+    config: 'src/config.js'
   },
   html: function (data) {
     return {

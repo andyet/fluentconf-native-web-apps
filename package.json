@@ -42,7 +42,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "ship": "npm run build && surge -p public -d labelfor.me",
+    "yolo": "npm run build && surge -p public -d labelfor.me",
     "start": "hjs-dev-server",
     "test": "standard"
   },
