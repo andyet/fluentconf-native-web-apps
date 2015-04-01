@@ -1,5 +1,6 @@
 import React from 'react'
 import ampersandMixin from 'ampersand-react-mixin'
+import Label from '../views/label'
 
 export default React.createClass({
   mixins: [ampersandMixin],
@@ -11,7 +12,7 @@ export default React.createClass({
       if (repo.labels.length) {
         list = repo.labels.map((label) => {
           return (
-            <div key={label.name} style={{backgroundColor: label.color}}>{label.name}</div>
+            <Label key={label.name} {...label.toJSON()}/>
           )
         })
       } else {
@@ -26,9 +27,9 @@ export default React.createClass({
       <div>
         <h3>{repo.full_name}</h3>
         <h4>Labels</h4>
-        <div>
+        <ul>
           {list}
-        </div>
+        </ul>
       </div>
     )
   }

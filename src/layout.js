@@ -22,7 +22,7 @@ export default React.createClass({
             <input id='menu-toggle' className='menu-toggle' type='checkbox'/>
             <label for='menu-toggle'>Menu</label>
             <ul className='list-unstyled list-inline cf'>
-              <li>LABELR</li>
+              <li>LabelFor.me</li>
               <li><a href="/">Repos</a></li>
               <li className="pull-right">{me.login} <a href="/logout">Logout</a></li>
             </ul>
@@ -36,7 +36,7 @@ export default React.createClass({
       return (
         <div onClick={this.onClick} className="container">
           <header role="banner">
-            <h1>LABELR</h1>
+            <h1>LabelFor.me</h1>
             <p>Don&apos;t even try to label me, yo. Or do and see if I care. Whatevs.&trade;</p>
           </header>
           <div>
