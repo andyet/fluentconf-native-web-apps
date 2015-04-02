@@ -47,7 +47,8 @@
     "prebuild": "rm -rf ./public && mkdir public",
     "start": "hjs-dev-server",
     "test": "standard",
-    "yolo": "npm run test && npm run build && surge -p public -d labelfor.me"
+    "commit": "npm version minor && git push origin master --tags",
+    "yolo": "npm run test && npm run commit && npm run build && surge -p public -d labelfor.me"
   },
   "standard": {
     "ignore": [
