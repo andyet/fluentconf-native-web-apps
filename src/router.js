@@ -7,7 +7,7 @@ import config from 'config'
 import Layout from './layout'
 import HomePage from './pages/home'
 import RepoDetailPage from './pages/repo-detail'
-import ErrorPage from './pages/error'
+import MessagePage from './pages/message'
 import PublicPage from './pages/public'
 
 export default Router.extend({
@@ -49,6 +49,8 @@ export default Router.extend({
   authCallback () {
     const code = qs.parse(window.location.search.slice(1)).code
 
+    this.renderPage(MessagePage, {title: 'Loading...', message: 'Fetching Github Data'})
+
     xhr({
       url: config.tokenUrl + '/' + code,
       json: true
@@ -62,6 +64,6 @@ export default Router.extend({
     })
   },
   fourOhFour () {
-    this.renderPage(ErrorPage, {title: '404', message: 'Nothing to see here, sorry.'})
+    this.renderPage(MessagePage, {title: '404', message: 'Nothing to see here, sorry.'})
   }
 })
