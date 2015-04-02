@@ -42,11 +42,12 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rm -rf ./public && mkdir public",
     "build": "NODE_ENV=production webpack",
-    "yolo": "npm run test && npm run build && surge -p public -d labelfor.me",
+    "deploy": "surge -p public -d labelfor.me",
+    "prebuild": "rm -rf ./public && mkdir public",
     "start": "hjs-dev-server",
-    "test": "standard"
+    "test": "standard",
+    "yolo": "npm run test && npm run build && surge -p public -d labelfor.me"
   },
   "standard": {
     "ignore": [
