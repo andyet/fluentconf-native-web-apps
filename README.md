@@ -28,5 +28,4 @@ The app we're building: [http://labelfor.me](http://labelfor.me/)
 
 **Day 1**
 
-
 **Day 2**
