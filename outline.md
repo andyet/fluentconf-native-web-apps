@@ -64,16 +64,15 @@ Prep:
 
 **10:30 - 11:00 morning break**
 
-Cleanup, Optimization, Bug Fixes
-Configs and Deploys
-Adding A 404 Page
+- Cleanup, Optimization, Bug Fixes
+- Configs and Deploys
+- Adding A 404 Page
 
 **12:30 - 1:45 Lunch Break**
 
-Static Isomorphic Rendering
-Using Standard for Code Style
-Bugfixes and Cleanup
-
+- Static Isomorphic Rendering
+- Using Standard for Code Style
+- Bugfixes and Cleanup
 
 **3:15 - 3:45 Afternoon Break**
 
