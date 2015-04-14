@@ -1,76 +1,87 @@
-## Class Outline
+## Day 1
 
-Setup:
-- create client folder:
-  - app.js
-  - say-hi.js
-- run with `node app.js`
-- create index.html, include script
-- use browserify CLI
+Prep:
+- Set theme to mac
+- Clear tokens from github
+- Set font-size
 
+**9:00 Start**
 
-- Hapi (basic server running)
-- Moonboots (get code running in browser)
-  - demo minification
-- GIT INIT!
-- Main View with string template
-  - domready
-  - ampersand-view
-- Set up templatizer
-- Add bootstrap stylesheet
-- add getconfig
-- precommit-hook
+- Short intro talk
+- Project setup
+- Deploy index page with surge
+- Setup hjs-webpack
+- Deploy built app.js file with surge
+- Intro to React.js
+    - Visit site
+    - Talk about how it works
+    - What makes it unique
+- Render basic "hello" content with React
+- Adding styles
+    - show yeticss.com
+    - create styles folder in src
+    - import yeticss.com
+    - show what happens when you build now
+    - show live reloading in action
+- Convert ES5 React module to ES6
+    - compare them side-by-side
 
+**10:30 - 11:00 morning break**
 
-{{ FRAMEWORKS TALK/DISCUSSION }}
+- Install and use the router
+    - public and 'repos' routes
+    - start with console.log routes
+    - React.render inside method
+    - re-deploy
+- Introduce ampersand-app pattern
+    - demo event signaling via app
+- Add layout.js
+- Local links
 
+**12:30 - 1:45 Lunch Break**
 
-Main App:
-- Add navigation jade (bit.ly/hjs-live)
-- create a router
-- create internal click handler
-- create home page
-- create howls page
-- create page switcher and wire it up
+- Authing with GitHub
+- Persisting token, modeling 'me'
+- Binding username
 
-API Stuff:
-- introduce the API: x
-- create and wire up howls collection and howls model
-- do fetch
-- render collection
-- do authentication
-- create and wire up "me" model
+**3:15 - 3:45 Afternoon Break**
 
-
-
-Day #2:
-
-- Make it pseudo realtime with polling
-- Switch it up for making it realtime with web sockets
-- do some real bindings for the howl view
-    - humanized date
-    - loop through collection
-
-- show stylizer some real CSS, livereload
-- introduce "subviews" notation
+- Rendering list of Repos
+- Repo Detail Page
+- Rendering The Labels
+- Creating a Label component
+- Adding Octicons
 
 
-Wolfbook
-- clone and run, explain npm i && npm start
-- make 'map' a derived property instead of session:
-    - size
-    - key
-    - zoom
-- put lat/lon values in view
-- put zoom value in view
-- talk about two-way bindings
-- add friends to "me" as collections
-- render collection using views
+## Day 2
+
+**9:00 Start**
+
+- Editing Mode for Labels
+- Deleting Labels
+- Updating Labels
+- Creating New Labels
+
+**10:30 - 11:00 morning break**
+
+Cleanup, Optimization, Bug Fixes
+Configs and Deploys
+Adding A 404 Page
+
+**12:30 - 1:45 Lunch Break**
+
+Static Isomorphic Rendering
+Using Standard for Code Style
+Bugfixes and Cleanup
 
 
-Code Generation
+**3:15 - 3:45 Afternoon Break**
 
-Publishing an npm module
+- Open hacking
+    - Add a link to real repo
+    - Add validation to form
+    - Add user avatar
+    - Write module that fetches "all" repos (using github paging API)
+    - Add color picker?
 
-Slides
-Open hack session
+**5:15 Done**
