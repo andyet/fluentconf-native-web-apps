@@ -12,11 +12,15 @@ Prep:
 - Deploy index page with surge
 - Setup hjs-webpack
 - Deploy built app.js file with surge
+- Render basic "hello" content with React
+
 - Intro to React.js
     - Visit site
     - Talk about how it works
     - What makes it unique
-- Render basic "hello" content with React
+
+** frameworks talk/discussion **
+
 - Adding styles
     - show yeticss.com
     - create styles folder in src
@@ -80,6 +84,7 @@ Prep:
     - Add a link to real repo
     - Add validation to form
     - Add user avatar
+    - Switch it over to login with firebase
     - Write module that fetches "all" repos (using github paging API)
     - Add color picker?
 
