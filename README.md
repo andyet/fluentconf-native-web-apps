@@ -8,6 +8,10 @@ Going to be pushing code here as we go: http://github.com/henrikjoreteg/labelr
 
 If you want to check your code or catch up, you can always grab latest from there.
 
+## Snippets
+
+Please try the [copypasta](copypasta.md) it's delicious.
+
 
 ## What you'll need before we start
 
@@ -30,11 +34,6 @@ If you want to check your code or catch up, you can always grab latest from ther
     - Consuming an external JSON API
 3. Putting your app on the Internet
 
-## Resources
-
-A few little snippets for quick copy and paste
-
-
 ## Rough Outline
 
 **9:00 Start**
@@ -45,11 +44,7 @@ A few little snippets for quick copy and paste
 - Setup hjs-webpack
 - Deploy built app.js file with surge
 - Render basic "hello" content with React
-
 - Intro to React.js
-    - Visit site
-    - Talk about how it works
-    - What makes it unique
 
 ** frameworks talk/discussion **
 
