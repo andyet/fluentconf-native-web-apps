@@ -2,6 +2,13 @@
 
 Copy of the app we're buildling: [http://hubtags.com](http://hubtags.com) github repo for that app: https://github.com/henrikjoreteg/hubtags.com
 
+## Catching up as we go
+
+Going to be pushing code here as we go: http://github.com/henrikjoreteg/labelr
+
+If you want to check your code or catch up, you can always grab latest from there.
+
+
 ## What you'll need before we start
 
 1. Node.js and npm installed (Download and run the installer from http://nodejs.org/)
