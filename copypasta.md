@@ -24,7 +24,7 @@ GitHub auth
 
 ```
 {
-  scopes: 'user,repo',
+  scope: 'user,repo',
   redirect_uri: {something} + '/auth/callback',
   client_id: 'f8dd69187841cdd22a26'
 }
