@@ -67,7 +67,7 @@ Please try the [copypasta](copypasta.md) it's delicious.
 - Introduce ampersand-app pattern
     - demo event signaling via app
 - Add layout.js
-- Local links
+- Local links/Internal Nav Component
 
 **12:30 - 1:45 Lunch Break**
 
