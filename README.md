@@ -12,6 +12,16 @@ If you want to check your code or catch up, you can always grab latest from ther
 
 Please try the [copypasta](copypasta.md) it's delicious.
 
+Relevant links:
+
+- node.js: http://nodejs.org/
+- npm: https://www.npmjs.com/
+- Register for github developer program: https://developer.github.com/program/
+- Heroku: http://heroku.com/
+- GateKeeper (heroku github thing): https://github.com/prose/gatekeeper
+- React: http://facebook.github.io/react/
+- Ampersand.js: http://ampersandjs.com/
+- Surge: http://surge.sh/
 
 ## What you'll need before we start
 
