@@ -8,6 +8,12 @@ Going to be pushing code here as we go: http://github.com/henrikjoreteg/labelr
 
 If you want to check your code or catch up, you can always grab latest from there.
 
+## Feedback form
+
+We <3 feedback, good or bad (you'll have some time to do this at the end):
+
+http://j.mp/fluent-feedback
+
 ## Snippets
 
 Please try the [copypasta](copypasta.md) it's delicious.
@@ -21,6 +27,7 @@ Relevant links:
 - GateKeeper (heroku github thing): https://github.com/prose/gatekeeper
 - React: http://facebook.github.io/react/
 - Ampersand.js: http://ampersandjs.com/
+- Local Cache Mixin: https://github.com/henrikjoreteg/ampersand-local-cache-mixin
 - Surge: http://surge.sh/
 
 ## What you'll need before we start
@@ -83,6 +90,7 @@ Relevant links:
 
 - Authing with GitHub
 - Persisting token, modeling 'me'
+- fetching me from github
 - Binding username
 
 **3:15 - 3:45 Afternoon Break**

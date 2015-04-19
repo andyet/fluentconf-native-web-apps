@@ -30,21 +30,27 @@ GitHub auth
 }
 ```
 
+```
+http://labelr-dev.herokuapp.com/authenticate/CODE'
+```
 
-<form className='label'>
-  <span className='label-color avatar avatar-small avatar-rounded'>&nbsp;</span>
-  <input name='name'/>
-  <input name='color'/>
-  <button type='submit' className='button button-small'>Save</button>
-  <button type='button' className='button button-small button-unstyled'>cancel</button>
-</form>
+Login page:
 
-<div className='label'>
-  <span className='label-color'>&nbsp;</span>
-  <span></span>
-  <span className='octicon octicon-pencil'></span>
-  <span className='octicon octicon-x'></span>
+```
+<div className='container'>
+  <header role='banner'>
+    <h1>Labelr</h1>
+  </header>
+  <div>
+    <p>We label stuff for you, because, we can&trade;</p>
+    <a href='/login' className='button button-large'>
+      <span className='mega-octicon octicon-mark-github'></span> Login with GitHub
+    </a>
+  </div>
 </div>
+```
+
+Styles
 
 ```
 header
@@ -66,16 +72,41 @@ header
 
 ```
 
+
+Repo Detail
+
 ```
 <div className='container'>
-  <header role='banner'>
-    <h1>Labelr</h1>
-  </header>
-  <div>
-    <p>We label stuff for you, because, we can&trade;</p>
-    <a href='/login' className='button button-large'>
-      <span className='mega-octicon octicon-mark-github'></span> Login with GitHub
-    </a>
-  </div>
+  <h1></h1>
+  <p></p>
+  <ul></ul>
 </div>
+```
+
+Labels
+
+```
+<form className='label'>
+  <span className='label-color avatar avatar-small avatar-rounded'>&nbsp;</span>
+  <input name='name'/>
+  <input name='color'/>
+  <button type='submit' className='button button-small'>Save</button>
+  <button type='button' className='button button-small button-unstyled'>cancel</button>
+</form>
+```
+
+```
+<div className='label'>
+  <span className='label-color'>&nbsp;</span>
+  <span></span>
+  <span className='octicon octicon-pencil'></span>
+  <span className='octicon octicon-x'></span>
+</div>
+```
+
+
+For instructor
+
+```
+"commit": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags",
 ```
