@@ -105,6 +105,26 @@ Labels
 ```
 
 
+Template function
+
+```js
+function template (buildData, html) {
+  return [
+    '<!doctype>',
+    '<html>',
+      '<head>',
+        '<meta charset="utf-8"/>',
+        '<link rel="stylesheet" href="/' + buildData.css + '"/>',
+      '</head>',
+      '<body>',
+        html,
+      '</body>',
+      '<script src="/' + buildData.main + '"></script>',
+    '</html>'
+  ].join('')
+}
+```
+
 For instructor
 
 ```
