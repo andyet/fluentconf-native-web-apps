@@ -86,27 +86,21 @@ Repo Detail
 Labels
 
 ```
-<form className='label-form form-inline'>
-  <span className='label-color'>&nbsp;</span>
-  <div className='form-element'>
-    <label htmlFor='name'>name</label>
-    <input name='name' className='form-input'/>
-  </div>
-  <div className='form-element'>
-    <label htmlFor='name'>color</label>
-    <input name='color' className='form-input'/>
-  </div>
-  <button type='submit' className='button button'>Save</button>
-  <button type='button' className='button button-unstyled'>cancel</button>
+<form className='label'>
+  <span className='label-color avatar avatar-small avatar-rounded'>&nbsp;</span>
+  <input name='name'/>
+  <input name='color'/>
+  <button type='submit' className='button button-small'>Save</button>
+  <button type='button' className='button button-small button-unstyled'>cancel</button>
 </form>
 ```
 
 ```
-<div className='label-view'>
-  <span className='label-color'>&nbsp;</span>
+<div className='label'>
+  <span className='label-color' style={{backgroundColor: cssColor}}>&nbsp;</span>
   <span></span>
-  <a href='#'><span className='octicon octicon-pencil'></span></a>
-  <a href='#'><span className='octicon octicon-x'></span></a>
+  <span className='octicon octicon-pencil'></span>
+  <span className='octicon octicon-x'></span>
 </div>
 ```
 
